@@ -56,13 +56,9 @@
     // Разрешить стрелочным функциям не оборачивать единственный параметр в скобки
     "arrow-parens": ["error", "as-needed", {"requireForBlockBody": true}],
     // Разрешает в дочерних скоупах создавать переменные с теми же именами
-    "no-shadow": ["off"],
+    "no-shadow": ["error"],
     // Разрешает переприсваивать значение аргументам функций
-    "no-param-reassign": ["off"],
-    // Теперь не будет требовать дефолты для обязательных параметров
-    "react/require-default-props": ["off"],
-    // Теперь можно использовать any в propTypes
-    "react/forbid-prop-types": ["off"],
+    "no-param-reassign": ["warn"],
     // Теперь при сравнении можно писать числа слева от знака, н.р.: 6 < from
     "yoda": ["off"],
     // Запрет <a href="#"> или <a href="javascript:void(0)">
@@ -98,7 +94,7 @@
       { "blankLine": "always", "prev": "*", "next": "break" }
     ],
     // Если есть onClick, то key events теперь не обязательны
-    "jsx-a11y/click-events-have-key-events": "off",
+    "jsx-a11y/click-events-have-key-events": "warn",
     // Теперь можно вешать обработчики на статические элементы, а не только на кнопки, чекбоксы, поля и прочее
     "jsx-a11y/no-static-element-interactions": "error",
     // off правил. иначе падает ошибка: Definition for rule was not found
@@ -107,7 +103,7 @@
     "react/static-property-placement": "off",
     "react/jsx-props-no-spreading": "off",
     // Убираем сортировку методов
-    "react/sort-comp": "off",
+    "react/sort-comp": "off"
   },
   "env": {
     "browser": true,
