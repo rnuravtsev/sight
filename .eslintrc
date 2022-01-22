@@ -1,0 +1,124 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 12,
+    "sourceType": "module",
+    "project": "./tsconfig.json"
+  },
+  "plugins": ["@typescript-eslint", "optimize-regex"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "react-app",
+    "airbnb-typescript",
+    "prettier"
+  ],
+  "rules": {
+    // without ";"
+    // "semi": ["error", "never"],
+    "no-restricted-syntax": ["error", "ForInStatement", "LabeledStatement", "WithStatement"],
+    "complexity": ["error", { "max": 10 }],
+    // Символ переноса строки в коде
+    "linebreak-style": ["off"],
+    // Везде одиночные кавычкии
+    "quotes": ["error", "single"],
+    // Ширина строк
+    "max-len": [
+      "error",
+      {
+        "code": 120,
+        "ignoreComments": true,
+        "ignoreTrailingComments": true,
+        "ignoreUrls": true,
+        "ignoreStrings": true,
+        "ignoreTemplateLiterals": true,
+        "ignoreRegExpLiterals": true
+      }
+    ],
+    // Отступы
+    "indent": ["error", 4, {"SwitchCase": 1}],
+    "react/jsx-indent": ["error", 4],
+    "react/jsx-indent-props": ["error", 4],
+    "spaced-comment": ["error", "always"],
+    // Разбитие импортов на группы
+    "import/order": [
+      "error", {
+        "groups": ["builtin", "external", "internal", "parent", "sibling", "index"],
+        "newlines-between": "always"
+      }
+    ],
+    // Дефолтного экспорта быть не должно
+    "import/prefer-default-export": "off",
+    // Отступы внутри объектов и массивов
+    "object-curly-spacing": ["error", "always"],
+    // Не выносить контент объектов на отдельную строку
+    "object-curly-newline": ["off"],
+    // Разрешить стрелочным функциям не оборачивать единственный параметр в скобки
+    "arrow-parens": ["error", "as-needed", {"requireForBlockBody": true}],
+    // Разрешает в дочерних скоупах создавать переменные с теми же именами
+    "no-shadow": ["off"],
+    // Разрешает переприсваивать значение аргументам функций
+    "no-param-reassign": ["off"],
+    // Теперь не будет требовать дефолты для обязательных параметров
+    "react/require-default-props": ["off"],
+    // Теперь можно использовать any в propTypes
+    "react/forbid-prop-types": ["off"],
+    // Теперь при сравнении можно писать числа слева от знака, н.р.: 6 < from
+    "yoda": ["off"],
+    // Запрет <a href="#"> или <a href="javascript:void(0)">
+    "jsx-a11y/anchor-is-valid": ["error", {"aspects": ["invalidHref"]}],
+    // Выключаем, чтоб можно было использовать await в циклах
+    "no-await-in-loop": ["off"],
+    // Выключаем, чтоб можно было использовать setState в componentDidUpdate
+    "react/no-did-update-set-state": ["off"],
+    // Из за эффекта всплытия можно использовать функции и классы до их объявления, но с переменными не так.
+    // Почему то работает тоько error и off, а ["error", { "functions": false, "classes": false }] - не воспринимается (
+    "no-use-before-define": ["off"],
+    "no-unsafe-optional-chaining": ["off"],
+    // Легализация ++/-- в циклах
+    "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
+    // Обязательные фигурные скобки
+    "curly": ["error", "all"],
+    // Перенос строки в логических операторах
+    "operator-linebreak": ["error", "after", { "overrides": { "?": "before", ":": "before" } }],
+    //
+    "optimize-regex/optimize-regex": "warn",
+    // Пустая стока перед return
+    //    "newline-before-return": "error",
+    // Пустая строка после блока объявления переменных переменными
+    //    "newline-after-var": ["error", "always"],
+    "padding-line-between-statements": [
+      "error",
+      // Вставлять пробел после блока переменных
+      { "blankLine": "always", "prev": ["const", "let", "var"], "next": "*" },
+      { "blankLine": "any", "prev": ["const", "let", "var"], "next": ["const", "let", "var"] },
+      // Вставлять пробел перед return
+      { "blankLine": "always", "prev": "*", "next": "return" },
+      // Вставлять пробел перед break
+      { "blankLine": "always", "prev": "*", "next": "break" }
+    ],
+    // Если есть onClick, то key events теперь не обязательны
+    "jsx-a11y/click-events-have-key-events": "off",
+    // Теперь можно вешать обработчики на статические элементы, а не только на кнопки, чекбоксы, поля и прочее
+    "jsx-a11y/no-static-element-interactions": "error",
+    // off правил. иначе падает ошибка: Definition for rule was not found
+    "react/jsx-curly-newline": "off",
+    "react/state-in-constructor": "off",
+    "react/static-property-placement": "off",
+    "react/jsx-props-no-spreading": "off",
+    // Убираем сортировку методов
+    "react/sort-comp": "off",
+  },
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx",".ts", ".tsx"]
+      }
+    }
+  },
+  "ignorePatterns": ["*.test.ts", "*.test.tsx"]
+}
