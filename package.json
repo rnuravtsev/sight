@@ -62,6 +62,6 @@
     }
   },
   "lint-staged": {
-    "*.(ts|tsx)": "yarn run lint:fix"
+    "src/**/*.{ts,tsx}": ["yarn run lint:fix", "git add"]
   }
 }
