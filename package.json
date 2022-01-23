@@ -58,10 +58,14 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged",
+      "post-commit": "git update-index -g"
     }
   },
   "lint-staged": {
-    "src/**/*.{ts,tsx}": ["yarn run lint:fix", "git add"]
+    "src/**/*.{ts,tsx}": [
+      "yarn run lint:fix",
+      "git add"
+    ]
   }
 }
