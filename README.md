@@ -2,8 +2,8 @@
 
 **This project is intended for personal educational purposes 🎯**
 
-##Essentials:
+#Essentials:
 > `Lightweight` `Adaptive` `a11y` `Core Elements`
 
-##Tech Stack:
+#Tech Stack:
 > `React` `Typescript` `Jest` `CSS-In-JS` `CSS3` `HTML5`
