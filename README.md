@@ -1,4 +1,4 @@
-# React UI toolkit *Sight 👀*
+# React UI toolkit — *Sight 👀*
 
 **This project is intended for personal educational purposes 🎯**
 
